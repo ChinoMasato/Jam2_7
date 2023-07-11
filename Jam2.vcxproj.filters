@@ -12,30 +12,30 @@
     <ClCompile Include="winmain.cpp">
       <Filter>ソースファイル</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Downloads\ファイル分けSTGサンプル20230608\enemy.cpp">
+    <ClCompile Include="en.cpp">
       <Filter>ソースファイル</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Downloads\ファイル分けSTGサンプル20230608\player.cpp">
+    <ClCompile Include="enemy.cpp">
       <Filter>ソースファイル</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Downloads\ファイル分けSTGサンプル20230608\shot.cpp">
+    <ClCompile Include="player.cpp">
       <Filter>ソースファイル</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Downloads\ファイル分けSTGサンプル20230608\en.cpp">
+    <ClCompile Include="shot.cpp">
       <Filter>ソースファイル</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Downloads\ファイル分けSTGサンプル20230608\en.h">
+    <ClInclude Include="player.h">
       <Filter>ヘッダファイル</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Downloads\ファイル分けSTGサンプル20230608\enemy.h">
+    <ClInclude Include="en.h">
       <Filter>ヘッダファイル</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Downloads\ファイル分けSTGサンプル20230608\player.h">
+    <ClInclude Include="enemy.h">
       <Filter>ヘッダファイル</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Downloads\ファイル分けSTGサンプル20230608\shot.h">
+    <ClInclude Include="shot.h">
       <Filter>ヘッダファイル</Filter>
     </ClInclude>
   </ItemGroup>

@@ -86,17 +86,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Downloads\ファイル分けSTGサンプル20230608\en.cpp" />
-    <ClCompile Include="..\..\..\Downloads\ファイル分けSTGサンプル20230608\enemy.cpp" />
-    <ClCompile Include="..\..\..\Downloads\ファイル分けSTGサンプル20230608\player.cpp" />
-    <ClCompile Include="..\..\..\Downloads\ファイル分けSTGサンプル20230608\shot.cpp" />
+    <ClCompile Include="en.cpp" />
+    <ClCompile Include="enemy.cpp" />
+    <ClCompile Include="player.cpp" />
+    <ClCompile Include="shot.cpp" />
     <ClCompile Include="winmain.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Downloads\ファイル分けSTGサンプル20230608\en.h" />
-    <ClInclude Include="..\..\..\Downloads\ファイル分けSTGサンプル20230608\enemy.h" />
-    <ClInclude Include="..\..\..\Downloads\ファイル分けSTGサンプル20230608\player.h" />
-    <ClInclude Include="..\..\..\Downloads\ファイル分けSTGサンプル20230608\shot.h" />
+    <ClInclude Include="en.h" />
+    <ClInclude Include="enemy.h" />
+    <ClInclude Include="player.h" />
+    <ClInclude Include="shot.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
