@@ -17,6 +17,7 @@ bool gameOverFlag = false;//ゲームオーバー判定
 // プログラムは WinMain から始まります
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
+	SetOutApplicationLogValidFlag(FALSE);//ログ無効
 	//DXライブラリの初期化処理 ここから
 	ChangeWindowMode(TRUE);	//ウィンドウモードにする
 	SetGraphMode(800, 600, 32);	//ウィンドウサイズを設定する
