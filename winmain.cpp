@@ -74,7 +74,7 @@ void updateGame()
 		score++;//１フレームごとに１点加算
 	}
 
-	if (GetRand(99) == 0)
+	if (GetRand(199) == 0)
 	{
 		//実る
 		for (int i = 0; i < EnemyNum; i++) {
