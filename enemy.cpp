@@ -18,7 +18,7 @@ void initEnemy()
 		enemy[i].r = GetRand(20) + 10;
 		enemy[i].color = GetColor(0, 200, 0);
 		enemy[i].fill = true;
-		enemy[i].enable = true;
+		enemy[i].enable = false;
 
 		double speed = GetRand(50) / 500 + 1.0;//速度
 		//double dx = player.x - enemy[i].x;//プレイヤーと敵のx方向の距離
@@ -34,10 +34,12 @@ void updateEnemy()
 {
 	for (int i = 0; i < EnemyNum; i++) {
 		if (enemy[i].enable == true) {
+			enemy[i].cooltime--;
 			//敵を自動で動かす
 			//enemy[i].x = enemy[i].x + enemy[i].vx;
-			enemy[i].y = enemy[i].y + enemy[i].vy;
-
+			if (enemy[i].cooltime <= 0) {
+				enemy[i].y = enemy[i].y + enemy[i].vy;
+			}
 			/*if (enemy[i].x < 0) {
 				//もし左端に出たら
 				enemy[i].x = 0;
