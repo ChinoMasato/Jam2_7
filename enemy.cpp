@@ -7,11 +7,16 @@
 
 extern bool gameOverFlag;//ゲームオーバー判定
 int p;
+
+int enemyimg1;
+
 En enemy[EnemyNum];//敵
 //extern int p;
 //敵の初期化
 void initEnemy()
 {
+	enemyimg1 = LoadGraph("");
+
 	for (int i = 0; i < EnemyNum; i++) {
 		enemy[i].x = GetRand(799);
 		enemy[i].y = GetRand(100);

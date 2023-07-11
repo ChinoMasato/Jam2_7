@@ -10,6 +10,14 @@ void updateGame();//ゲーム内容の更新
 void draw();//描画処理
 void drawGame();//ゲーム関連の描画
 
+enum GameScene
+{
+	Title,
+	Game
+};
+GameScene scene = Title;
+int Titleimg;
+
 //ゲーム関連の情報
 int score = 0;//点数
 bool gameOverFlag = false;//ゲームオーバー判定
@@ -47,12 +55,15 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 //初期化関数　引数、戻り値なし
 void init()
 {
+	Titleimg = LoadGraph("bg2.jpg");
 	//プレイヤーの初期化
 	initPlayer();
 	//弾の初期化
 	initShot();
 	//敵の初期化処理
 	initEnemy();
+	//BGM再生
+	//PlayMusic("ファイル名", DX_PLAYTYPE_LOOP);
 }
 //更新関数
 void update()

@@ -4,9 +4,13 @@
 #include "player.h"
 
 En player;//プレイヤー
+int playerimg;
+
 //プレイヤーの初期化
 void initPlayer()
 {
+	playerimg = LoadGraph("");
+
 	player.x = 350;
 	player.y = 500;
 	player.r = 10;
