@@ -55,8 +55,8 @@ void updateEnemy()
 			}
 			if (enemy[i].y >= 600) {
 				//‚à‚µ‰E’[‚Éo‚½‚ç
-				enemy[i].y = 600;
-				enemy[i].vy = -enemy[i].vy;
+				//enemy[i].y = 600;
+				//enemy[i].vy = -enemy[i].vy;
 			}
 
 			if (isHit(player, enemy[i]))
