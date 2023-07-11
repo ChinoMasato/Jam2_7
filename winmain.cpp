@@ -90,8 +90,8 @@ void draw()
 //ゲーム情報の描画
 void drawGame()
 {
-	DrawFormatString(0, 0, GetColor(255, 255, 0), "スコア %d 点", score);
-
+	DrawFormatString(0, 0, GetColor(255, 255, 0), "タイム %d 点", score);
+	DrawFormatString(0, 50, GetColor(255, 255, 0), "スコア %d 点",p);
 	if (gameOverFlag == true) {
 		DrawFormatString(350, 300, GetColor(255, 0, 0), "ゲームオーバー");
 	}
