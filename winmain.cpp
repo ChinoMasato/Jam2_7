@@ -71,14 +71,25 @@ void init()
 }
 void titleUpdate()
 {
+	playerimg = playerimg1;
+	//見た目変更
+	if (CheckHitKey(KEY_INPUT_1) == 1)
+	{
+		playerimg = playerimg1;
+	}
+	if (CheckHitKey(KEY_INPUT_2) == 1)
+	{
+		playerimg = playerimg2;
+	}
 	if (CheckHitKey(KEY_INPUT_RETURN) == 1)
 	{
 		//タイトル画像の描画
 		scene = Game;//Gameシーンへの切り替え
-		
+
 	}
 	DrawGraph(0, 0, Titleimg, true);
 	DrawGraph(280, 350, press, true);//プッシュロゴの表示設定
+	DrawGraph(player.x - 48, player.y - 48, playerimg, true);
 }
 //更新関数
 void update()

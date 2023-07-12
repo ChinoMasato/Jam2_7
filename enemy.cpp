@@ -14,7 +14,7 @@ En enemy[EnemyNum];//“G
 //“G‚Ì‰Šú‰»
 void initEnemy()
 {
-	enemyimg1 = LoadGraph("");
+	enemyimg1 = LoadGraph("rakkasei.png");
 
 	for (int i = 0; i < EnemyNum; i++) {
 		enemy[i].x = GetRand(799);
@@ -95,6 +95,7 @@ void drawEnemy()
 	for (int i = 0; i < EnemyNum; i++) {
 		if (enemy[i].enable == true) {
 			DrawCircle(enemy[i].x, enemy[i].y, enemy[i].r, enemy[i].color, enemy[i].fill);
+			DrawGraph(enemy[i].x - 32, enemy[i].y - 32, enemyimg1, true);
 		}
 	}
 }

@@ -4,11 +4,15 @@
 
 En player;//プレイヤー
 int playerimg;
+int playerimg1;
+int playerimg2;
 
 //プレイヤーの初期化
 void initPlayer()
 {
-	playerimg = LoadGraph("");
+	playerimg = playerimg1;
+	playerimg1 = LoadGraph("chi-bakun.png");
+	playerimg2 = LoadGraph("rakkasei.png");
 
 	player.x = 350;
 	player.y = 500;
@@ -83,4 +87,5 @@ void updatePlayer()
 void drawPlayer()
 {
 	DrawCircle(player.x, player.y, player.r, player.color, player.fill);
+	DrawGraph(player.x - 48, player.y - 48, playerimg, true);
 }
