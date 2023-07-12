@@ -9,6 +9,7 @@
  int score ;//点数
  int t;//時間
  bool gameOverFlag ;//ゲームオーバー判定
+  GameScene scene;
 
 void updateGame()
 {
@@ -34,6 +35,10 @@ void updateGame()
 				break;
 			}
 		}
+	}
+	if (t >= 5)
+	{
+		scene = Clear;
 	}
 }
 

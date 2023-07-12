@@ -12,13 +12,8 @@ void drawGame();//ゲーム関連の描画
 void titleUpdate();//タイトルの描画
 void ClearUpdate();//クリア画面の描画
 
-enum GameScene
-{
-	Title,
-	Game,
-	Clear
-};
-extern GameScene scene;
+
+
 int Titleimg;
 int press;
 
@@ -103,7 +98,7 @@ void update()
 void ClearUpdate() 
 {
 	//DrawGraph(0, 0, Titleimg, true);//画像追加用
-	DrawFormatString(0, 50, GetColor(255, 255, 0), "スコア %d 点", p);
+	DrawFormatString(300, 350, GetColor(255, 255, 0), "スコア %d 点", p);
 }
 //描画処理
 void draw()
