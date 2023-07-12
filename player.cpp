@@ -1,6 +1,5 @@
 #include "en.h"
 #include "DxLib.h"
-
 #include "player.h"
 
 En player;//ƒvƒŒƒCƒ„[
