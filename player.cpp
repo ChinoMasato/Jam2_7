@@ -1,6 +1,6 @@
 #include "en.h"
 #include "DxLib.h"
-#include "shot.h"
+
 #include "player.h"
 
 En player;//ƒvƒŒƒCƒ„[

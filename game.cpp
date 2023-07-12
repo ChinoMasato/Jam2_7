@@ -1,7 +1,7 @@
 #include "en.h"
 #include "DxLib.h"
 #include <math.h>
-#include "shot.h"
+
 #include "enemy.h"
 #include "player.h"
 #include "game.h"
