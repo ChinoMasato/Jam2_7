@@ -31,12 +31,7 @@ void updateGame()
 				enemy[i].r = GetRand(20) + 10;
 				enemy[i].color = GetColor(GetRand(100) + 155, GetRand(100) + 155, GetRand(100) + 155);
 				enemy[i].cooltime = 300;//À‚Á‚Ä‚©‚ç—‚¿‚éŠÔ
-				enemy[i].typePb = GetRand(6);//”š’e‚ÌŠm—¦
-				enemy[i].type = normal;
-				if (enemy[i].typePb >= 5)
-				{
-					enemy[i].type = bomb;
-				}
+				
 				enemy[i].enable = true;
 				break;
 			}

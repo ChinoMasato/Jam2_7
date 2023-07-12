@@ -99,7 +99,6 @@ void drawPlayer()
 	DrawGraph(player.x - 48, player.y - 48, playerimg, true);
 	if (stop > 0)
 	{
-		DrawGraph(player.x -40, player.y - 58
-			, piyoimg, true);
+		DrawGraph(player.x -40, player.y - 58, piyoimg, true);//ƒXƒ^ƒ“‚µ‚½‚Ì¯
 	}
 }

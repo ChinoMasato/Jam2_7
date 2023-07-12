@@ -2,7 +2,8 @@
 enum EnemyType
 {
 	normal,
-	bomb
+	bomb,
+	nasi
 };
 
 //‰~‚Ì\‘¢‘Ì

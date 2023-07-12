@@ -9,6 +9,7 @@ int p;
 
 int enemyimg1;
 int enemyimg2;
+int enemyimg3;
 
 En enemy[EnemyNum];//敵
 //extern int p;
@@ -17,6 +18,7 @@ void initEnemy()
 {
 	enemyimg1 = LoadGraph("rakkasei.png");
 	enemyimg2 = LoadGraph("bakudan.png");
+	enemyimg3 = LoadGraph("nasi.png");
 	
 	for (int i = 0; i < EnemyNum; i++) {
 		enemy[i].x = GetRand(799);
@@ -33,6 +35,20 @@ void initEnemy()
 		//double d = sqrt(dx * dx + dy * dy);//敵とプレイヤーとの距離
 		//enemy[i].vx = speed * (dx / d);//xの移動量
 		enemy[i].vy = speed ;//yの移動量
+		
+		//落花生以外が出る確率
+		enemy[i].typePb = GetRand(6);//typeの確率
+		enemy[i].type = normal;
+		if (enemy[i].typePb == 0)
+		{
+			enemy[i].type = bomb;
+		}
+		if (enemy[i].typePb == 1 ||
+			enemy[i].typePb == 2)
+		{
+			enemy[i].type = nasi;
+			enemy[i].vy = speed * 2.0;
+		}
 	}
 }
 //敵の更新
@@ -70,7 +86,8 @@ void updateEnemy()
 			if (isHit(player, enemy[i]))
 			{
 				//当たっている
-				if (enemy[i].type == normal)
+				if (enemy[i].type == normal||
+					enemy[i].type == nasi)
 				{
 					p = p + 1;
 					enemy[i].enable = false;
@@ -111,6 +128,9 @@ void drawEnemy()
 			DrawCircle(enemy[i].x, enemy[i].y, enemy[i].r, enemy[i].color, enemy[i].fill);
 			if (enemy[i].type == normal) {
 				DrawGraph(enemy[i].x - 32, enemy[i].y - 32, enemyimg1, true);
+			}
+			if (enemy[i].type == nasi) {
+				DrawGraph(enemy[i].x - 32, enemy[i].y - 32, enemyimg3, true);
 			}
 			if (enemy[i].type == bomb) {
 				DrawGraph(enemy[i].x - 32, enemy[i].y - 32, enemyimg2, true);
