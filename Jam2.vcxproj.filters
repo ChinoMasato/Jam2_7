@@ -21,9 +21,6 @@
     <ClCompile Include="player.cpp">
       <Filter>ソースファイル</Filter>
     </ClCompile>
-    <ClCompile Include="shot.cpp">
-      <Filter>ソースファイル</Filter>
-    </ClCompile>
     <ClCompile Include="game.cpp">
       <Filter>ソースファイル</Filter>
     </ClCompile>
@@ -39,9 +36,6 @@
       <Filter>ヘッダファイル</Filter>
     </ClInclude>
     <ClInclude Include="enemy.h">
-      <Filter>ヘッダファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="shot.h">
       <Filter>ヘッダファイル</Filter>
     </ClInclude>
     <ClInclude Include="game.h">

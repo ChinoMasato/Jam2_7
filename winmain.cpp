@@ -1,6 +1,5 @@
 ﻿#include "DxLib.h"
 #include "player.h"
-#include "shot.h"
 #include "enemy.h"
 #include "en.h"
 #include "game.h"
