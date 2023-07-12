@@ -57,8 +57,7 @@ void init()
 	Titleimg = LoadGraph("bg2.jpg");
 	//プレイヤーの初期化
 	initPlayer();
-	//弾の初期化
-	initShot();
+	
 	//敵の初期化処理
 	initEnemy();
 	//BGM再生
@@ -71,8 +70,7 @@ void update()
 	updateGame();
 	//プレイヤーの更新
 	updatePlayer();
-	//弾の更新
-	updateShot();
+	
 	//敵の更新
 	updateEnemy();
 	//描画処理
@@ -86,8 +84,7 @@ void draw()
 	drawEnemy();
 	//プレイヤーの描画
 	drawPlayer();
-	//弾の描画
-	drawShot();
+	
 	//ゲーム関連の描画
 	drawGame();
 }
