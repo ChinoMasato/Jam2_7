@@ -59,7 +59,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 //初期化関数　引数、戻り値なし
 void init()
 {
-	Titleimg = LoadGraph("bg2.jpg");
+	Titleimg = LoadGraph("");
 	press = LoadGraph("cooltext437636616251046.png");
 	//プレイヤーの初期化
 	initPlayer();

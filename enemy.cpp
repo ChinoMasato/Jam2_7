@@ -7,7 +7,6 @@
 extern bool gameOverFlag;//ゲームオーバー判定
 int p;
 
-
 int enemyimg1;
 int enemyimg2;
 
@@ -16,7 +15,6 @@ En enemy[EnemyNum];//敵
 //敵の初期化
 void initEnemy()
 {
-	
 	enemyimg1 = LoadGraph("rakkasei.png");
 	enemyimg2 = LoadGraph("bakudan.png");
 	
@@ -79,10 +77,11 @@ void updateEnemy()
 				}
 				if (enemy[i].type == bomb)
 				{
-					if (p >= 0)
+					if (p > 0)
 					{
-						p = p - 1;
+						p = p - 1;//爆弾に当たったらスコアマイナス
 					}
+					stop = 200;//爆弾に当たった時のスタン時間
 					enemy[i].enable = false;
 				}
 				//gameOverFlag = true;//ゲームオーバーフラグを立てる
@@ -116,7 +115,6 @@ void drawEnemy()
 			if (enemy[i].type == bomb) {
 				DrawGraph(enemy[i].x - 32, enemy[i].y - 32, enemyimg2, true);
 			}
-
 		}
 	}
 }

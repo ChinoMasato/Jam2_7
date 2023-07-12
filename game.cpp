@@ -42,7 +42,7 @@ void updateGame()
 			}
 		}
 	}
-	if (t >= 5)
+	if (t >= 10)
 	{
 		scene = Clear;
 	}

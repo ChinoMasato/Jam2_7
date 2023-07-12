@@ -3,6 +3,7 @@
 
 extern En player;//ƒvƒŒƒCƒ„[
 extern int p;
+extern int stop;
 
 extern int playerimg;
 extern int playerimg1;

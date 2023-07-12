@@ -6,34 +6,43 @@ En player;//プレイヤー
 int playerimg;
 int playerimg1;
 int playerimg2;
+int piyoimg;
+
+int stop;
 
 //プレイヤーの初期化
 void initPlayer()
 {
-	
 	playerimg1 = LoadGraph("chi-bakun.png");
 	playerimg2 = LoadGraph("rakkasei.png");
 	playerimg = playerimg1;
+	piyoimg = LoadGraph("piyo.png");
 	player.x = 350;
 	player.y = 500;
-	player.r = 10;
+	player.r = 40;
 	player.color = GetColor(255, 255, 255);
 	player.fill = true;
 	player.cooltime = 0;
+	stop = 0;
 }
 
 //プレイヤーの更新
 void updatePlayer()
 {
 	//プレイヤーを動かす
-	if (CheckHitKey(KEY_INPUT_RIGHT) == 1)
+	if (stop <= 0)
 	{
-		player.x = player.x + 2.0;
+		if (CheckHitKey(KEY_INPUT_RIGHT) == 1)
+		{
+			player.x = player.x + 2.0;
+		}
+		if (CheckHitKey(KEY_INPUT_LEFT) == 1)
+		{
+			player.x = player.x - 2.0;
+		}
 	}
-	if (CheckHitKey(KEY_INPUT_LEFT) == 1)
-	{
-		player.x = player.x - 2.0;
-	}
+	stop--;
+	
 	/*if (CheckHitKey(KEY_INPUT_UP) == 1)
 	{
 		player.y = player.y - 2.0;
@@ -88,4 +97,9 @@ void drawPlayer()
 {
 	DrawCircle(player.x, player.y, player.r, player.color, player.fill);
 	DrawGraph(player.x - 48, player.y - 48, playerimg, true);
+	if (stop > 0)
+	{
+		DrawGraph(player.x -40, player.y - 58
+			, piyoimg, true);
+	}
 }
