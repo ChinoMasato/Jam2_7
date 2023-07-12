@@ -3,6 +3,7 @@
 #include "shot.h"
 #include "enemy.h"
 #include "en.h"
+#include "game.h"
 
 void init();//初期化関数のプロトタイプ宣言
 void update();//更新関数のプロトタイプ宣言
@@ -18,9 +19,7 @@ enum GameScene
 GameScene scene = Title;
 int Titleimg;
 
-//ゲーム関連の情報
-int score = 0;//点数
-bool gameOverFlag = false;//ゲームオーバー判定
+
 
 // プログラムは WinMain から始まります
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
@@ -79,29 +78,7 @@ void update()
 	//描画処理
 	draw();
 }
-//ゲーム内容の更新
-void updateGame()
-{
-	if (gameOverFlag == false) {
-		score++;//１フレームごとに１点加算
-	}
 
-	if (GetRand(199) == 0)
-	{
-		//実る
-		for (int i = 0; i < EnemyNum; i++) {
-			if (enemy[i].enable == false) {
-				enemy[i].enable = true;
-				enemy[i].x = GetRand(799);
-				enemy[i].y = 50;
-				enemy[i].r = GetRand(20) + 10;
-				enemy[i].color = GetColor(GetRand(100) + 155, GetRand(100)+155, GetRand(100) + 155);
-				enemy[i].cooltime = 100;
-				break;
-			}
-		}
-	}
-}
 //描画処理
 void draw()
 {
@@ -115,12 +92,3 @@ void draw()
 	drawGame();
 }
 
-//ゲーム情報の描画
-void drawGame()
-{
-	DrawFormatString(0, 0, GetColor(255, 255, 0), "タイム %d 点", score);
-	DrawFormatString(0, 50, GetColor(255, 255, 0), "スコア %d 点",p);
-	if (gameOverFlag == true) {
-		DrawFormatString(350, 300, GetColor(255, 0, 0), "ゲームオーバー");
-	}
-}
