@@ -7,15 +7,19 @@
 extern bool gameOverFlag;//ゲームオーバー判定
 int p;
 
+
 int enemyimg1;
+int enemyimg2;
 
 En enemy[EnemyNum];//敵
 //extern int p;
 //敵の初期化
 void initEnemy()
 {
+	
 	enemyimg1 = LoadGraph("rakkasei.png");
-
+	enemyimg2 = LoadGraph("bakudan.png");
+	
 	for (int i = 0; i < EnemyNum; i++) {
 		enemy[i].x = GetRand(799);
 		enemy[i].y = GetRand(100);
@@ -68,8 +72,19 @@ void updateEnemy()
 			if (isHit(player, enemy[i]))
 			{
 				//当たっている
-				p = p + 1;
-				enemy[i].enable = false;
+				if (enemy[i].type == normal)
+				{
+					p = p + 1;
+					enemy[i].enable = false;
+				}
+				if (enemy[i].type == bomb)
+				{
+					if (p >= 0)
+					{
+						p = p - 1;
+					}
+					enemy[i].enable = false;
+				}
 				//gameOverFlag = true;//ゲームオーバーフラグを立てる
 			}
 
@@ -95,7 +110,13 @@ void drawEnemy()
 	for (int i = 0; i < EnemyNum; i++) {
 		if (enemy[i].enable == true) {
 			DrawCircle(enemy[i].x, enemy[i].y, enemy[i].r, enemy[i].color, enemy[i].fill);
-			DrawGraph(enemy[i].x - 32, enemy[i].y - 32, enemyimg1, true);
+			if (enemy[i].type == normal) {
+				DrawGraph(enemy[i].x - 32, enemy[i].y - 32, enemyimg1, true);
+			}
+			if (enemy[i].type == bomb) {
+				DrawGraph(enemy[i].x - 32, enemy[i].y - 32, enemyimg2, true);
+			}
+
 		}
 	}
 }

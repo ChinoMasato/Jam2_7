@@ -1,4 +1,10 @@
 #pragma once
+enum EnemyType
+{
+	normal,
+	bomb
+};
+
 //円の構造体
 struct En
 {
@@ -11,6 +17,8 @@ struct En
 	double vy;//縦の移動量
 	bool enable;//有効フラグ（生きてるか、死んでるか）
 	int cooltime;//連射できないようにするタイマー
+	EnemyType type;
+	int typePb;//爆弾の確率に使う変数
 };
 
 bool isHit(En en1, En en2);//当たり判定関数

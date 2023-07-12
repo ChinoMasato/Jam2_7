@@ -26,12 +26,18 @@ void updateGame()
 		//ŽÀ‚é
 		for (int i = 0; i < EnemyNum; i++) {
 			if (enemy[i].enable == false) {
-				enemy[i].enable = true;
 				enemy[i].x = GetRand(799);
 				enemy[i].y = 50;
 				enemy[i].r = GetRand(20) + 10;
 				enemy[i].color = GetColor(GetRand(100) + 155, GetRand(100) + 155, GetRand(100) + 155);
 				enemy[i].cooltime = 300;//ŽÀ‚Á‚Ä‚©‚ç—Ž‚¿‚éŽžŠÔ
+				enemy[i].typePb = GetRand(6);//”š’e‚ÌŠm—¦
+				enemy[i].type = normal;
+				if (enemy[i].typePb >= 5)
+				{
+					enemy[i].type = bomb;
+				}
+				enemy[i].enable = true;
 				break;
 			}
 		}
