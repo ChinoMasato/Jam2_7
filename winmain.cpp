@@ -71,7 +71,7 @@ void init()
 }
 void titleUpdate()
 {
-	playerimg = playerimg1;
+	
 	//見た目変更
 	if (CheckHitKey(KEY_INPUT_1) == 1)
 	{

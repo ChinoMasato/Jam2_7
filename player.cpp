@@ -10,10 +10,10 @@ int playerimg2;
 //ƒvƒŒƒCƒ„[‚Ì‰Šú‰»
 void initPlayer()
 {
-	playerimg = playerimg1;
+	
 	playerimg1 = LoadGraph("chi-bakun.png");
 	playerimg2 = LoadGraph("rakkasei.png");
-
+	playerimg = playerimg1;
 	player.x = 350;
 	player.y = 500;
 	player.r = 10;
