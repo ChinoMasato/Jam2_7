@@ -3,6 +3,7 @@
 #include <math.h>
 #include "enemy.h"
 #include "player.h"
+#include"effect.h"
 
 extern bool gameOverFlag;//ゲームオーバー判定
 int p;
@@ -51,6 +52,23 @@ void initEnemy()
 		}
 	}
 }
+
+//爆発発生関数
+void explosion(En ene)
+{
+	for (int i = 0; i < EffectNum; i++)
+	{
+		if (effe[i].enable == false)
+		{
+			effe[i].enable = true;
+			effe[i].x = ene.x - 60;
+			effe[i].y = ene.y - 60;
+			effe[i].animeNo = 0;
+			break;
+		}
+	}
+}
+
 //敵の更新
 void updateEnemy()
 {
@@ -97,6 +115,7 @@ void updateEnemy()
 					if (p > 0)
 					{
 						p = p - 1;//爆弾に当たったらスコアマイナス
+						explosion(enemy[i]);
 					}
 					stop = 200;//爆弾に当たった時のスタン時間
 					enemy[i].enable = false;

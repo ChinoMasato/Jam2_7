@@ -86,6 +86,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="effect.cpp" />
     <ClCompile Include="en.cpp" />
     <ClCompile Include="enemy.cpp" />
     <ClCompile Include="game.cpp" />
@@ -94,6 +95,7 @@
     <ClCompile Include="winmain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="effect.h" />
     <ClInclude Include="en.h" />
     <ClInclude Include="enemy.h" />
     <ClInclude Include="game.h" />

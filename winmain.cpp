@@ -3,6 +3,7 @@
 #include "enemy.h"
 #include "en.h"
 #include "game.h"
+#include"effect.h"
 
 void init();//初期化関数のプロトタイプ宣言
 void update();//更新関数のプロトタイプ宣言
@@ -12,12 +13,8 @@ void drawGame();//ゲーム関連の描画
 void titleUpdate();//タイトルの描画
 void ClearUpdate();//クリア画面の描画
 
-
-
 int Titleimg;
 int press;
-
-
 
 // プログラムは WinMain から始まります
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
@@ -46,14 +43,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		if (scene == Clear) {
 			ClearUpdate();
 		}
-
 		ScreenFlip();		//裏画面と表画面の入替
 		ClearDrawScreen();	//裏画面の描画を全て消去
 	}
 	//メインループ処理ここまで
 
 	DxLib_End();			// ＤＸライブラリ使用の終了処理
-
 	return 0;				// ソフトの終了 
 }
 //初期化関数　引数、戻り値なし
@@ -63,7 +58,8 @@ void init()
 	press = LoadGraph("cooltext437636616251046.png");
 	//プレイヤーの初期化
 	initPlayer();
-	
+	//エフェクトの初期化
+	initEffect();
 	//敵の初期化処理
 	initEnemy();
 	//BGM再生
@@ -71,7 +67,6 @@ void init()
 }
 void titleUpdate()
 {
-	
 	//見た目変更
 	if (CheckHitKey(KEY_INPUT_1) == 1)
 	{
@@ -85,7 +80,6 @@ void titleUpdate()
 	{
 		//タイトル画像の描画
 		scene = Game;//Gameシーンへの切り替え
-
 	}
 	DrawGraph(0, 0, Titleimg, true);
 	DrawGraph(280, 350, press, true);//プッシュロゴの表示設定
@@ -98,12 +92,12 @@ void update()
 	updateGame();
 	//プレイヤーの更新
 	updatePlayer();
-	
 	//敵の更新
 	updateEnemy();
+	//エフェクトの更新
+	updateEffect();
 	//描画処理
 	draw();
-	
 }
 
 void ClearUpdate() 
@@ -118,7 +112,8 @@ void draw()
 	drawEnemy();
 	//プレイヤーの描画
 	drawPlayer();
-	
+	//エフェクトの描画
+	drawEffect();
 	//ゲーム関連の描画
 	drawGame();
 }
