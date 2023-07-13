@@ -76,6 +76,10 @@ void titleUpdate()
 	{
 		playerimg = playerimg2;
 	}
+	if (CheckHitKey(KEY_INPUT_3) == 1)
+	{
+		playerimg = playerimg3;
+	}
 	if (CheckHitKey(KEY_INPUT_RETURN) == 1)
 	{
 		//タイトル画像の描画

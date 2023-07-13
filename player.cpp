@@ -6,6 +6,7 @@ En player;//ÉvÉåÉCÉÑÅ[
 int playerimg;
 int playerimg1;
 int playerimg2;
+int playerimg3;
 int piyoimg;
 int scoreimg;
 
@@ -15,7 +16,8 @@ int stop;
 void initPlayer()
 {
 	playerimg1 = LoadGraph("chi-bakun.png");
-	playerimg2 = LoadGraph("rakkasei.png");
+	playerimg2 = LoadGraph("funasi.png");
+	playerimg3 = LoadGraph("nezumi.png");
 	playerimg = playerimg1;
 	piyoimg = LoadGraph("piyo.png");
 
@@ -38,11 +40,11 @@ void updatePlayer()
 	{
 		if (CheckHitKey(KEY_INPUT_RIGHT) == 1)
 		{
-			player.x = player.x + 2.0;
+			player.x = player.x + 1.0;
 		}
 		if (CheckHitKey(KEY_INPUT_LEFT) == 1)
 		{
-			player.x = player.x - 2.0;
+			player.x = player.x - 1.0;
 		}
 	}
 	stop--;
@@ -100,7 +102,7 @@ void updatePlayer()
 void drawPlayer()
 {
 	//DrawCircle(player.x, player.y, player.r, player.color, player.fill);
-	DrawGraph(player.x - 48, player.y - 48, playerimg, true);
+	DrawGraph(player.x - 125, player.y - 48, playerimg, true);
 	DrawGraph(player.x - 65, player.y +10 , scoreimg, true);
 	SetFontSize(32);
 	DrawFormatString(player.x-7, player.y+58, GetColor(255, 255, 0), "%d", p);

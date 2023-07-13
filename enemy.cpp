@@ -40,12 +40,13 @@ void initEnemy()
 		//落花生以外が出る確率
 		enemy[i].typePb = GetRand(6);//typeの確率
 		enemy[i].type = normal;
-		if (enemy[i].typePb == 0)
+		if (enemy[i].typePb == 0||
+			enemy[i].typePb == 1)
 		{
 			enemy[i].type = bomb;
 		}
-		if (enemy[i].typePb == 1 ||
-			enemy[i].typePb == 2)
+		if (enemy[i].typePb == 2 ||
+			enemy[i].typePb == 3)
 		{
 			enemy[i].type = nasi;
 			enemy[i].vy = speed * 2.0;
@@ -96,6 +97,7 @@ void updateEnemy()
 				enemy[i].vy = -enemy[i].vy;
 			}
 			if (enemy[i].y >= 600) {
+				enemy[i].enable = false;
 				//もし右端に出たら
 				//enemy[i].y = 600;
 				//enemy[i].vy = -enemy[i].vy;
@@ -104,10 +106,22 @@ void updateEnemy()
 			if (isHit(player, enemy[i]))
 			{
 				//当たっている
-				if (enemy[i].type == normal||
-					enemy[i].type == nasi)
+				if (enemy[i].type == normal)
 				{
 					p = p + 1;
+					if (playerimg == playerimg1)
+					{
+						p = p + 1;
+					}
+					enemy[i].enable = false;
+				}
+				if (enemy[i].type == nasi)
+				{
+					p = p + 1;
+					if (playerimg == playerimg2)
+					{
+						p = p + 1;
+					}
 					enemy[i].enable = false;
 				}
 				if (enemy[i].type == bomb)
@@ -115,6 +129,10 @@ void updateEnemy()
 					if (p > 0)
 					{
 						p = p - 1;//爆弾に当たったらスコアマイナス
+						if (playerimg == playerimg3)
+						{
+							p = p + 89;
+						}
 						explosion(enemy[i]);
 					}
 					stop = 200;//爆弾に当たった時のスタン時間

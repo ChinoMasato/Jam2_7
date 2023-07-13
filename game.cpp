@@ -21,7 +21,7 @@ void updateGame()
 		}
 	}
 
-	if (GetRand(199) == 0)//¶¬‚³‚ê‚éŠÔ
+	if (GetRand(80) == 0)//¶¬‚³‚ê‚éŠÔ
 	{
 		//À‚é
 		for (int i = 0; i < EnemyNum; i++) {
@@ -37,7 +37,7 @@ void updateGame()
 			}
 		}
 	}
-	if (t >= 10)
+	if (t >= 40)
 	{
 		scene = Clear;
 	}
