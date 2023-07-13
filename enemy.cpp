@@ -24,7 +24,7 @@ void initEnemy()
 	for (int i = 0; i < EnemyNum; i++) {
 		enemy[i].x = GetRand(799);
 		enemy[i].y = GetRand(100);
-		enemy[i].r = GetRand(20) + 10;
+		enemy[i].r =  10;
 		enemy[i].color = GetColor(0, 200, 0);
 		enemy[i].fill = true;
 		enemy[i].enable = false;

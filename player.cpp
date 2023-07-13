@@ -7,6 +7,7 @@ int playerimg;
 int playerimg1;
 int playerimg2;
 int piyoimg;
+int scoreimg;
 
 int stop;
 
@@ -17,6 +18,9 @@ void initPlayer()
 	playerimg2 = LoadGraph("rakkasei.png");
 	playerimg = playerimg1;
 	piyoimg = LoadGraph("piyo.png");
+
+	scoreimg= LoadGraph("無題173_20230713085742.png");
+
 	player.x = 350;
 	player.y = 500;
 	player.r = 40;
@@ -95,8 +99,10 @@ void updatePlayer()
 //プレイヤーの描画
 void drawPlayer()
 {
-	DrawCircle(player.x, player.y, player.r, player.color, player.fill);
+	//DrawCircle(player.x, player.y, player.r, player.color, player.fill);
 	DrawGraph(player.x - 48, player.y - 48, playerimg, true);
+	DrawGraph(player.x , player.y , scoreimg, true);
+	DrawFormatString(player.x, player.y+10, GetColor(255, 255, 0), "スコア %d 点", p);
 	if (stop > 0)
 	{
 		DrawGraph(player.x -40, player.y - 58, piyoimg, true);//スタンした時の星
