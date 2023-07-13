@@ -19,7 +19,7 @@ void initPlayer()
 	playerimg = playerimg1;
 	piyoimg = LoadGraph("piyo.png");
 
-	scoreimg= LoadGraph("無題173_20230713085742.png");
+	scoreimg= LoadGraph("scoreboard.png");
 
 	player.x = 350;
 	player.y = 500;
@@ -101,8 +101,10 @@ void drawPlayer()
 {
 	//DrawCircle(player.x, player.y, player.r, player.color, player.fill);
 	DrawGraph(player.x - 48, player.y - 48, playerimg, true);
-	DrawGraph(player.x , player.y , scoreimg, true);
-	DrawFormatString(player.x, player.y+10, GetColor(255, 255, 0), "スコア %d 点", p);
+	DrawGraph(player.x - 65, player.y +10 , scoreimg, true);
+	SetFontSize(32);
+	DrawFormatString(player.x-7, player.y+58, GetColor(255, 255, 0), "%d", p);
+	SetFontSize(16);
 	if (stop > 0)
 	{
 		DrawGraph(player.x -40, player.y - 58, piyoimg, true);//スタンした時の星
