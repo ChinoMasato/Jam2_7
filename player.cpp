@@ -23,7 +23,7 @@ void initPlayer()
 
 	scoreimg= LoadGraph("scoreboard.png");
 
-	player.x = 350;
+	player.x = 270 + 128;
 	player.y = 500;
 	player.r = 40;
 	player.color = GetColor(255, 255, 255);

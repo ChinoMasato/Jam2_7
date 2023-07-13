@@ -28,7 +28,7 @@ void updateGame()
 			if (enemy[i].enable == false) {
 				enemy[i].x = GetRand(799);
 				enemy[i].y = 50;
-				enemy[i].r = GetRand(20) + 10;
+				//enemy[i].r = GetRand(20) + 10;
 				enemy[i].color = GetColor(GetRand(100) + 155, GetRand(100) + 155, GetRand(100) + 155);
 				enemy[i].cooltime = 300;//À‚Á‚Ä‚©‚ç—‚¿‚éŠÔ
 				

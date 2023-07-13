@@ -24,7 +24,7 @@ void initEnemy()
 	for (int i = 0; i < EnemyNum; i++) {
 		enemy[i].x = GetRand(799);
 		enemy[i].y = GetRand(100);
-		enemy[i].r =  10;
+		enemy[i].r =  16;
 		enemy[i].color = GetColor(0, 200, 0);
 		enemy[i].fill = true;
 		enemy[i].enable = false;
@@ -162,7 +162,7 @@ void drawEnemy()
 {
 	for (int i = 0; i < EnemyNum; i++) {
 		if (enemy[i].enable == true) {
-			DrawCircle(enemy[i].x, enemy[i].y, enemy[i].r, enemy[i].color, enemy[i].fill);
+			//DrawCircle(enemy[i].x, enemy[i].y, enemy[i].r, enemy[i].color, enemy[i].fill);
 			if (enemy[i].type == normal) {
 				DrawGraph(enemy[i].x - 32, enemy[i].y - 32, enemyimg1, true);
 			}
