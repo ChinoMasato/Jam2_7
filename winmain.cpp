@@ -14,6 +14,8 @@ void titleUpdate();//タイトルの描画
 void ClearUpdate();//クリア画面の描画
 
 int Titleimg;
+int Titlerg;
+int Gameimg;
 int press;
 
 
@@ -56,7 +58,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 //初期化関数　引数、戻り値なし
 void init()
 {
-	Titleimg = LoadGraph("");
+	Titleimg = LoadGraph("images (1).jpg");
+	Titlerg = LoadGraph("IMG_5201 (1).png");
+	Gameimg = LoadGraph("img_1371_480 (1).jpg");
 	press = LoadGraph("cooltext437636616251046.png");
 	//ゲーム情報の初期化
 	initGame();
@@ -89,13 +93,15 @@ void titleUpdate()
 		//タイトル画像の描画
 		scene = Game;//Gameシーンへの切り替え
 	}
-	DrawGraph(0, 0, Titleimg, true);
-	DrawGraph(300, 280, press, true);//プッシュロゴの表示設定
-	DrawGraph(270, 320, playerimg, true);
+	DrawGraph(0, 0, Titleimg, true); 
+	DrawGraph(100, -150, Titlerg, true);
+	DrawGraph(300, 300, press, true);//プッシュロゴの表示設定
+	DrawGraph(270, 340, playerimg, true);
 }
 //更新関数
 void update()
 {
+	DrawGraph(0, 0, Gameimg, true);
 	//ゲーム(審判)の更新
 	updateGame();
 	//プレイヤーの更新
