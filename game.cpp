@@ -44,7 +44,7 @@ void updateGame()
 			}
 		}
 	}
-	if (t >= 10)
+	if (t >= 40)
 	{
 		PlaySoundMem(finishse, DX_PLAYTYPE_BACK);
 		scene = Clear;
