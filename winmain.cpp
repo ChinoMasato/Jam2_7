@@ -100,6 +100,7 @@ void titleUpdate()
 	SetFontSize(32);
 	DrawFormatString(150, 360, GetColor(255, 0, 0), "1,2,3キーでキャラ変更だよ！");
 	SetFontSize(16);
+	PlayMusic("BGM.wav", DX_PLAYTYPE_LOOP);
 
 }
 //更新関数
