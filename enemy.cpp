@@ -143,9 +143,9 @@ void updateEnemy()
 						{
 							p = p + 89;
 						}
-						explosion(enemy[i]);
-						PlaySoundMem(bombse, DX_PLAYTYPE_BACK);
 					}
+					explosion(enemy[i]);
+					PlaySoundMem(bombse, DX_PLAYTYPE_BACK);
 					stop = 200;//爆弾に当たった時のスタン時間
 				}
 				//gameOverFlag = true;//ゲームオーバーフラグを立てる
