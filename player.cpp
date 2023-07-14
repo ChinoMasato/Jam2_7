@@ -20,7 +20,7 @@ void initPlayer()
 	playerimg3 = LoadGraph("nezumi.png");
 	playerimg = playerimg1;
 	piyoimg = LoadGraph("piyo.png");
-
+	
 	scoreimg= LoadGraph("scoreboard.png");
 
 	player.x = 270 + 128;
