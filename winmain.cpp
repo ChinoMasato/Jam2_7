@@ -97,7 +97,7 @@ void titleUpdate()
 	DrawGraph(100, -150, Titlerg, true);
 	DrawGraph(300, 300, press, true);//プッシュロゴの表示設定
 	DrawGraph(270, 340, playerimg, true);
-	DrawFormatString(300, 440, GetColor(255, 55, 0), "1,2,3でキャラ変更だよ！");
+	DrawFormatString(300, 440, GetColor(255, 55, 0), "1,2,3キーでキャラ変更だよ！");
 
 }
 //更新関数
