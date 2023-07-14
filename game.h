@@ -11,5 +11,6 @@ enum GameScene
 };
 extern GameScene scene;
 
+void initGame();
 void updateGame();
 void drawGame();

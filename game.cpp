@@ -11,6 +11,13 @@
  bool gameOverFlag ;//ゲームオーバー判定
   GameScene scene;
 
+  int finishse;
+
+
+void initGame()
+{
+	finishse = LoadSoundMem("finishse.mp3");
+}
 void updateGame()
 {
 	if (gameOverFlag == false) {
@@ -37,8 +44,9 @@ void updateGame()
 			}
 		}
 	}
-	if (t >= 40)
+	if (t >= 3)
 	{
+		PlaySoundMem(finishse, DX_PLAYTYPE_BACK);
 		scene = Clear;
 	}
 }

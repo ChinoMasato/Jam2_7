@@ -11,12 +11,16 @@ int p;
 int enemyimg1;
 int enemyimg2;
 int enemyimg3;
+int catchse;
+int bombse;
 
 En enemy[EnemyNum];//敵
 //extern int p;
 //敵の初期化
 void initEnemy()
 {
+	catchse = LoadSoundMem("catch.mp3");
+	bombse = LoadSoundMem("bombse.mp3");
 	enemyimg1 = LoadGraph("rakkasei.png");
 	enemyimg2 = LoadGraph("bakudan.png");
 	enemyimg3 = LoadGraph("nasi.png");
@@ -39,7 +43,12 @@ void initEnemy()
 		
 		//落花生以外が出る確率
 		enemy[i].typePb = GetRand(6);//typeの確率
-		enemy[i].type = normal;
+		
+		if (enemy[i].typePb == 4 ||
+			enemy[i].typePb == 5)
+		{
+			enemy[i].type = normal;
+		}
 		if (enemy[i].typePb == 0||
 			enemy[i].typePb == 1)
 		{
@@ -113,7 +122,7 @@ void updateEnemy()
 					{
 						p = p + 1;
 					}
-					enemy[i].enable = false;
+					PlaySoundMem(catchse, DX_PLAYTYPE_BACK);
 				}
 				if (enemy[i].type == nasi)
 				{
@@ -122,7 +131,7 @@ void updateEnemy()
 					{
 						p = p + 1;
 					}
-					enemy[i].enable = false;
+					PlaySoundMem(catchse, DX_PLAYTYPE_BACK);
 				}
 				if (enemy[i].type == bomb)
 				{
@@ -134,11 +143,12 @@ void updateEnemy()
 							p = p + 89;
 						}
 						explosion(enemy[i]);
+						PlaySoundMem(bombse, DX_PLAYTYPE_BACK);
 					}
 					stop = 200;//爆弾に当たった時のスタン時間
-					enemy[i].enable = false;
 				}
 				//gameOverFlag = true;//ゲームオーバーフラグを立てる
+				enemy[i].enable = false;
 			}
 
 			/*for (int j = 0; j < ShotNum; j++) {

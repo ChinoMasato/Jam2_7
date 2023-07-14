@@ -16,6 +16,8 @@ void ClearUpdate();//クリア画面の描画
 int Titleimg;
 int press;
 
+
+
 // プログラムは WinMain から始まります
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
@@ -56,6 +58,8 @@ void init()
 {
 	Titleimg = LoadGraph("");
 	press = LoadGraph("cooltext437636616251046.png");
+	//ゲーム情報の初期化
+	initGame();
 	//プレイヤーの初期化
 	initPlayer();
 	//エフェクトの初期化
