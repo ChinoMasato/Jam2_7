@@ -8,6 +8,7 @@
 extern bool gameOverFlag;//ゲームオーバー判定
 int p;
 
+
 int enemyimg1;
 int enemyimg2;
 int enemyimg3;

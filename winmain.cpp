@@ -97,6 +97,8 @@ void titleUpdate()
 	DrawGraph(100, -150, Titlerg, true);
 	DrawGraph(300, 300, press, true);//プッシュロゴの表示設定
 	DrawGraph(270, 340, playerimg, true);
+	DrawFormatString(300, 440, GetColor(255, 55, 0), "1,2,3でキャラ変更だよ！");
+
 }
 //更新関数
 void update()
@@ -117,7 +119,23 @@ void update()
 void ClearUpdate() 
 {
 	//DrawGraph(0, 0, Titleimg, true);//画像追加用
-	DrawFormatString(300, 350, GetColor(255, 255, 0), "スコア %d 点", p);
+	DrawFormatString(300, 300, GetColor(255, 255, 0), "スコア %d 点", p);
+	DrawFormatString(300, 350, GetColor(255, 255, 0), "SPACEでタイトルへ！！");
+	if (CheckHitKey(KEY_INPUT_SPACE) == 1)
+	{
+		//タイトル画像の描画
+		scene = Title;//Gameシーンへの切り替え
+		t = 0;
+		p = 0;
+		//ゲーム情報の初期化
+		initGame();
+		//プレイヤーの初期化
+		initPlayer();
+		//エフェクトの初期化
+		initEffect();
+		//敵の初期化処理
+		initEnemy();
+	}
 }
 //描画処理
 void draw()
